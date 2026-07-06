@@ -2,6 +2,8 @@ from typing import Any
 
 from leetsync.config.constants import GRAPHQL_URL
 from leetsync.network.client import HTTPClient
+from leetsync.models.submission import RecentSubmission
+from .graphql import RECENT_SUBMISSIONS_QUERY
 
 
 class LeetCodeClient:
@@ -40,3 +42,5 @@ class LeetCodeClient:
         response.raise_for_status()
 
         return response.json()
+    def get_recent_submissions(self, username: str) -> list[RecentSubmission]:
+        
