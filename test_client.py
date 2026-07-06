@@ -1,18 +1,13 @@
 from leetsync.api.client import LeetCodeClient
-from leetsync.api.graphql import RECENT_SUBMISSIONS_QUERY
 
 
 def main() -> None:
     client = LeetCodeClient()
 
-    response = client.execute(
-        query=RECENT_SUBMISSIONS_QUERY,
-        variables={
-            "username": "tarun100ni",
-        },
-    )
+    submissions = client.get_recent_submissions("tarun100ni")
 
-    print(response)
+    for submission in submissions:
+        print(submission)
 
 
 if __name__ == "__main__":

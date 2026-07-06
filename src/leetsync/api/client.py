@@ -43,4 +43,31 @@ class LeetCodeClient:
 
         return response.json()
     def get_recent_submissions(self, username: str) -> list[RecentSubmission]:
-        
+        """
+    Fetch the user's recent accepted LeetCode submissions.
+
+    Args:
+        username: LeetCode username.
+
+    Returns:
+        A list of RecentSubmission objects.
+    """
+
+        response = self.execute(
+        query=RECENT_SUBMISSIONS_QUERY,
+        variables={
+            "username": username,
+        },
+    )
+
+        submissions = response["data"]["recentAcSubmissionList"]
+
+        return [
+        RecentSubmission(
+            id=item["id"],
+            title=item["title"],
+            title_slug=item["titleSlug"],
+            timestamp=int(item["timestamp"]),
+        )
+        for item in submissions
+    ]
