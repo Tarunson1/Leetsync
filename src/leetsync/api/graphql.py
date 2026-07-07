@@ -43,3 +43,12 @@ query submissionDetails($submissionId: Int!) {
     }
 }
 """
+
+USER_STATUS_QUERY = """
+query userStatus {
+    userStatus {
+        username
+        isSignedIn
+    }
+}
+"""
