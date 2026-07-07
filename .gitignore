@@ -33,3 +33,10 @@ build/
 *.log
 
 .env
+
+.venv/
+__pycache__/
+*.pyc
+
+.leetsync/
+config.json
