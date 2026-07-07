@@ -33,3 +33,29 @@ build/
 *.log
 
 .env
+
+.venv/
+__pycache__/
+*.pyc
+
+.leetsync/
+config.json
+
+# LeetSync session
+.leetcode_session/
+
+# Local state
+sync_state.json
+
+# Local configuration
+config.json
+
+# Logs
+log.txt
+
+# History
+.history/
+
+# Playwright
+playwright-report/
+test-results/
