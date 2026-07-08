@@ -1,4 +1,5 @@
 from leetsync.notifications.console import Console
+from leetsync.services.sync_engine import SyncEngine
 
 
 class Commands:
@@ -9,7 +10,12 @@ class Commands:
 
     @staticmethod
     def sync():
-        Console.info("Sync started...")
+
+        Console.info("Starting synchronization...")
+
+        engine = SyncEngine()
+
+        engine.sync()
 
     @staticmethod
     def status():

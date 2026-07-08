@@ -17,11 +17,16 @@ class GitPush:
 
         self.repo = repo
 
+    # def push(self) -> None:
+    #     """
+    #     Push current branch to origin.
+    #     """
+
+    #     origin = self.repo.remote(name="origin")
+
+    #     origin.push()
+
     def push(self) -> None:
-        """
-        Push current branch to origin.
-        """
+        repo = self.repo
 
-        origin = self.repo.remote(name="origin")
-
-        origin.push()
+        repo.git.push("origin", "udaysingh-final")

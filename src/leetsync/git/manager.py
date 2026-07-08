@@ -43,10 +43,18 @@ class GitManager:
         Synchronize repository with GitHub.
         """
 
-        # Get latest changes
-        self.github.pull()
+        # NOTE:
+        # Pull is temporarily disabled because the repository is
+        # already up-to-date and GitPython is failing on automatic pull.
+        #
+        # You can manually run:
+        # git pull origin udaysingh-final
+        #
+        # before running sync if required.
 
-        # Stage files
+        # self.github.pull()
+
+        # Stage all files
         self.committer.stage_all()
 
         # Nothing changed
@@ -54,10 +62,10 @@ class GitManager:
             print("No changes detected.")
             return
 
-        # Commit
+        # Commit changes
         self.committer.commit(message)
 
-        # Push
+        # Push changes
         self.pusher.push()
 
         print("Repository synchronized successfully.")

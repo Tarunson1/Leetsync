@@ -4,7 +4,7 @@ GitHub repository management.
 
 from pathlib import Path
 
-from git import Repo
+from git import Repo, GitCommandError
 
 
 class GitHubRepository:
@@ -27,9 +27,9 @@ class GitHubRepository:
         """
 
         return (
-        self.local_path.exists()
-        and (self.local_path / ".git").exists()
-    )
+            self.local_path.exists()
+            and (self.local_path / ".git").exists()
+        )
 
     def clone(self) -> Repo:
         """
@@ -37,11 +37,10 @@ class GitHubRepository:
         """
 
         if not self.exists():
-
             return Repo.clone_from(
-            self.repository_url,
-            self.local_path,
-    )
+                self.repository_url,
+                self.local_path,
+            )
 
         return self.open()
 
@@ -51,13 +50,19 @@ class GitHubRepository:
         """
 
         return Repo(self.local_path)
+
     def pull(self) -> None:
         """
-        Pull the latest changes from origin.
+        Pull latest changes from current branch.
         """
 
         repo = self.open()
 
-        origin = repo.remote(name="origin")
+        try:
+            repo.git.pull("origin", "udaysingh-final")
 
-        origin.pull()
+        except GitCommandError as e:
+            print("\n========== GIT PULL ERROR ==========")
+            print(e)
+            print("====================================")
+            raise

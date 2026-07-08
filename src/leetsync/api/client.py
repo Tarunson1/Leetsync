@@ -315,6 +315,7 @@
 import sys
 import os
 from datetime import datetime
+from urllib import response
 
 # Python path ko adjust karein taaki 'src' directory ke modules safely discover ho sakein
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "src")))
@@ -351,16 +352,30 @@ class LeetCodeClient:
             timestamp=int(item["timestamp"]),
         )
 
-    def _map_submission_details(self, item: dict[str, Any]) -> SubmissionDetails:
+    # def _map_submission_details(self, item: dict[str, Any]) -> SubmissionDetails:
+    #     return SubmissionDetails(
+    #         code=item["code"],
+    #         runtime=item["runtimeDisplay"],
+    #         memory=item["memoryDisplay"],
+    #         language=item["lang"]["name"],
+    #         question_id=item["question"]["questionId"],
+    #         title_slug=item["question"]["titleSlug"],
+    #         timestamp=int(item["timestamp"]),
+    #     )
+    def _map_submission_details(self,item: dict[str, Any],) -> SubmissionDetails:
+
         return SubmissionDetails(
-            code=item["code"],
-            runtime=item["runtimeDisplay"],
-            memory=item["memoryDisplay"],
-            language=item["lang"]["name"],
-            question_id=item["question"]["questionId"],
-            title_slug=item["question"]["titleSlug"],
-            timestamp=int(item["timestamp"]),
-        )
+        submission_id=str(item.get("timestamp")),
+        question_id=item["question"]["questionId"],
+        title=item["question"]["titleSlug"].replace("-", " ").title(),
+        title_slug=item["question"]["titleSlug"],
+        difficulty="Unknown",
+        language=item["lang"]["name"],
+        code=item["code"],
+        runtime=item["runtimeDisplay"],
+        memory=item["memoryDisplay"],
+        timestamp=int(item["timestamp"]),)
+       
 
     def get_recent_submissions(
         self, 
@@ -393,12 +408,28 @@ class LeetCodeClient:
 
         return new_submissions
 
+    # def get_submission_details(self, submission_id: int) -> SubmissionDetails | None:
+    #     response = self.execute(
+    #         query=SUBMISSION_DETAILS_QUERY,
+    #         variables={"submissionId": submission_id},
+    #     )
+    #     details_data = response.get("data", {}).get("submissionDetails")
+    #     if not details_data:
+    #         return None
+    #     return self._map_submission_details(details_data)
+
     def get_submission_details(self, submission_id: int) -> SubmissionDetails | None:
         response = self.execute(
-            query=SUBMISSION_DETAILS_QUERY,
-            variables={"submissionId": submission_id},
+        query=SUBMISSION_DETAILS_QUERY,
+        variables={"submissionId": submission_id},
         )
+
+        # print("Submission Details Response:")
+        # print(response)
+
         details_data = response.get("data", {}).get("submissionDetails")
+
         if not details_data:
             return None
+
         return self._map_submission_details(details_data)
