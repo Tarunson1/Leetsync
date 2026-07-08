@@ -1,8 +1,8 @@
-from leetsync.auth.manager import AuthenticationManager
+# from leetsync.auth.manager import AuthenticationManager
 
-manager = AuthenticationManager()
+# manager = AuthenticationManager()
 
-context = manager.authenticate_all()
+# context = manager.authenticate_all()
 
-print("LeetCode:", context.leetcode.username)
-print("GitHub:", context.github.username)
+# print("LeetCode:", context.leetcode.username)
+# print("GitHub:", context.github.username)

@@ -1,15 +1,15 @@
-from leetsync.auth.manager import AuthenticationManager
+# from leetsync.auth.manager import AuthenticationManager
 
-manager = AuthenticationManager()
-session = manager.authenticate()
-# tokens = manager.authenticate()
+# manager = AuthenticationManager()
+# session = manager.authenticate()
+# # tokens = manager.authenticate()
 
-print(session.username)
-print(session.cookies)
-print(session.authenticated_at)
+# print(session.username)
+# print(session.cookies)
+# print(session.authenticated_at)
 
-from leetsync.config.manager import ConfigManager
+# from leetsync.config.manager import ConfigManager
 
-config = ConfigManager().load()
+# config = ConfigManager().load()
 
-print(config.github.client_id)
+# print(config.github.client_id)

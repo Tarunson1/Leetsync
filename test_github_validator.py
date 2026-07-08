@@ -1,12 +1,12 @@
-from leetsync.auth.github_validator import GitHubSessionValidator
-from leetsync.auth.storage import SessionStorage
+# from leetsync.auth.github_validator import GitHubSessionValidator
+# from leetsync.auth.storage import SessionStorage
 
-storage = SessionStorage()
+# storage = SessionStorage()
 
-session = storage.load_github()
+# session = storage.load_github()
 
-validator = GitHubSessionValidator()
+# validator = GitHubSessionValidator()
 
-session = validator.validate(session)
+# session = validator.validate(session)
 
-print(session)
+# print(session)

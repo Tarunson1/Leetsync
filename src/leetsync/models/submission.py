@@ -1,14 +1,14 @@
-from dataclasses import dataclass
-"""
-    Represents a recently accepted LeetCode submission.
-"""
-@dataclass(slots=True)
-class RecentSubmission:
+# from dataclasses import dataclass
+# """
+#     Represents a recently accepted LeetCode submission.
+# """
+# @dataclass(slots=True)
+# class RecentSubmission:
 
-    id: str
+#     id: str
 
-    title: str
+#     title: str
 
-    title_slug: str
+#     title_slug: str
 
-    timestamp: int
+#     timestamp: int

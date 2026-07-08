@@ -1,7 +1,7 @@
-from leetsync.auth.providers.github import GitHubProvider
+# from leetsync.auth.providers.github import GitHubProvider
 
-provider = GitHubProvider()
+# provider = GitHubProvider()
 
-session = provider.authenticate()
+# session = provider.authenticate()
 
-print(session)
+# print(session)

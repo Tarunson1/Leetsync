@@ -1,54 +1,54 @@
-"""
-GraphQL queries used by the LeetCode client.
-"""
+# """
+# GraphQL queries used by the LeetCode client.
+# """
 
-RECENT_SUBMISSIONS_QUERY = """
-query recentAcSubmissionList($username: String!) {
-    recentAcSubmissionList(username: $username) {
-        id
-        title
-        titleSlug
-        timestamp
-    }
-}
-"""
+# RECENT_SUBMISSIONS_QUERY = """
+# query recentAcSubmissionList($username: String!) {
+#     recentAcSubmissionList(username: $username) {
+#         id
+#         title
+#         titleSlug
+#         timestamp
+#     }
+# }
+# """
 
-SUBMISSION_DETAILS_QUERY = """
-query submissionDetails($submissionId: Int!) {
-    submissionDetails(submissionId: $submissionId) {
-        runtime
-        runtimeDisplay
-        runtimePercentile
+# SUBMISSION_DETAILS_QUERY = """
+# query submissionDetails($submissionId: Int!) {
+#     submissionDetails(submissionId: $submissionId) {
+#         runtime
+#         runtimeDisplay
+#         runtimePercentile
 
-        memory
-        memoryDisplay
-        memoryPercentile
+#         memory
+#         memoryDisplay
+#         memoryPercentile
 
-        code
-        timestamp
-        statusCode
+#         code
+#         timestamp
+#         statusCode
 
-        lang {
-            name
-            verboseName
-        }
+#         lang {
+#             name
+#             verboseName
+#         }
 
-        question {
-            questionId
-            titleSlug
-        }
+#         question {
+#             questionId
+#             titleSlug
+#         }
 
-        runtimeError
-        compileError
-    }
-}
-"""
+#         runtimeError
+#         compileError
+#     }
+# }
+# """
 
-USER_STATUS_QUERY = """
-query userStatus {
-    userStatus {
-        username
-        isSignedIn
-    }
-}
-"""
+# USER_STATUS_QUERY = """
+# query userStatus {
+#     userStatus {
+#         username
+#         isSignedIn
+#     }
+# }
+# """

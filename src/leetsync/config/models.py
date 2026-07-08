@@ -1,18 +1,18 @@
-from __future__ import annotations
+# from __future__ import annotations
 
-from dataclasses import dataclass
-
-
-@dataclass(slots=True)
-class GitHubConfig:
-    """GitHub OAuth configuration."""
-
-    client_id: str
-    client_secret: str
+# from dataclasses import dataclass
 
 
-@dataclass(slots=True)
-class Config:
-    """Application configuration."""
+# @dataclass(slots=True)
+# class GitHubConfig:
+#     """GitHub OAuth configuration."""
 
-    github: GitHubConfig
+#     client_id: str
+#     client_secret: str
+
+
+# @dataclass(slots=True)
+# class Config:
+#     """Application configuration."""
+
+#     github: GitHubConfig

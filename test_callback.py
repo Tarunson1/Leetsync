@@ -1,9 +1,9 @@
-from leetsync.auth.callback_server import CallbackServer
+# from leetsync.auth.callback_server import CallbackServer
 
-server = CallbackServer()
+# server = CallbackServer()
 
-print("Waiting...")
+# print("Waiting...")
 
-code = server.wait_for_code()
+# code = server.wait_for_code()
 
-print(code)
+# print(code)

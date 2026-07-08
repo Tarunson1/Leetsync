@@ -1,14 +1,14 @@
-from __future__ import annotations
+# from __future__ import annotations
 
-from dataclasses import dataclass
+# from dataclasses import dataclass
 
-from leetsync.auth.github_session import GitHubSession
-from leetsync.auth.models import AuthSession
+# from leetsync.auth.github_session import GitHubSession
+# from leetsync.auth.models import AuthSession
 
 
-@dataclass(slots=True)
-class AuthenticationContext:
-    """Authenticated sessions for all supported providers."""
+# @dataclass(slots=True)
+# class AuthenticationContext:
+#     """Authenticated sessions for all supported providers."""
 
-    leetcode: AuthSession
-    github: GitHubSession
+#     leetcode: AuthSession
+#     github: GitHubSession

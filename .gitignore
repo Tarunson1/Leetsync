@@ -1,42 +1,42 @@
-# Python
-__pycache__/
-*.py[cod]
-*.pyo
+# # Python
+# __pycache__/
+# *.py[cod]
+# *.pyo
 
-# Virtual environments
-.venv/
-venv/
-env/
+# # Virtual environments
+# .venv/
+# venv/
+# env/
 
-# IDE
-.vscode/
-.idea/
+# # IDE
+# .vscode/
+# .idea/
 
-# OS
-.DS_Store
-Thumbs.db
+# # OS
+# .DS_Store
+# Thumbs.db
 
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
+# # Testing
+# .pytest_cache/
+# .coverage
+# htmlcov/
 
-# Build
-dist/
-build/
-*.egg-info/
+# # Build
+# dist/
+# build/
+# *.egg-info/
 
-# SQLite
-*.db
+# # SQLite
+# *.db
 
-# Logs
-*.log
+# # Logs
+# *.log
 
-.env
+# .env
 
-.venv/
-__pycache__/
-*.pyc
+# .venv/
+# __pycache__/
+# *.pyc
 
-.leetsync/
-config.json
+# .leetsync/
+# config.json

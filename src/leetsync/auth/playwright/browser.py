@@ -1,18 +1,18 @@
-from playwright.sync_api import sync_playwright
+# from playwright.sync_api import sync_playwright
 
 
-class BrowserManager:
-    """Manage Playwright browser lifecycle."""
+# class BrowserManager:
+#     """Manage Playwright browser lifecycle."""
 
-    def launch(self):
-        playwright = sync_playwright().start()
+#     def launch(self):
+#         playwright = sync_playwright().start()
 
-        browser = playwright.chromium.launch(
-            headless=False,
-        )
+#         browser = playwright.chromium.launch(
+#             headless=False,
+#         )
 
-        context = browser.new_context()
+#         context = browser.new_context()
 
-        page = context.new_page()
+#         page = context.new_page()
 
-        return playwright, browser, context, page
+#         return playwright, browser, context, page

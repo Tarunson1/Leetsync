@@ -1,23 +1,23 @@
-"""
-Central logging configuration for LeetSync.
-"""
+# """
+# Central logging configuration for LeetSync.
+# """
 
-import logging
+# import logging
 
 
-def get_logger(name: str) -> logging.Logger:
-    """
-    Create and return a configured logger.
+# def get_logger(name: str) -> logging.Logger:
+#     """
+#     Create and return a configured logger.
 
-    Args:
-        name: Logger name.
+#     Args:
+#         name: Logger name.
 
-    Returns:
-        Configured logger instance.
-    """
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
-    )
+#     Returns:
+#         Configured logger instance.
+#     """
+#     logging.basicConfig(
+#         level=logging.INFO,
+#         format="%(asctime)s | %(levelname)-8s | %(name)s | %(message)s",
+#     )
 
-    return logging.getLogger(name)
+#     return logging.getLogger(name)

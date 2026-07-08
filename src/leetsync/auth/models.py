@@ -1,15 +1,15 @@
-from __future__ import annotations
+# from __future__ import annotations
 
-from dataclasses import dataclass
-from datetime import datetime
+# from dataclasses import dataclass
+# from datetime import datetime
 
 
-@dataclass(slots=True)
-class AuthSession:
-    """Authenticated LeetCode session."""
+# @dataclass(slots=True)
+# class AuthSession:
+#     """Authenticated LeetCode session."""
 
-    username: str
+#     username: str
 
-    cookies: dict[str, str]
+#     cookies: dict[str, str]
 
-    authenticated_at: datetime
+#     authenticated_at: datetime
