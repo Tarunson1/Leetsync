@@ -24,5 +24,7 @@ class ConfigManager:
             github=GitHubConfig(
                 client_id=data["github"]["client_id"],
                 client_secret=data["github"]["client_secret"],
+                repository_url=data["github"]["repository_url"],
+                local_path=data["github"]["local_path"],
             )
         )

@@ -9,6 +9,8 @@ class GitHubConfig:
 
     client_id: str
     client_secret: str
+    repository_url: str
+    local_path: str
 
 
 @dataclass(slots=True)
